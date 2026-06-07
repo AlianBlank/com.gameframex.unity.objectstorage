@@ -1,34 +1,24 @@
-<p align="center">
-  <img src="https://download.alianblank.com/gameframex/gameframex_logo_320.png" alt="GameFrameX Logo" width="160" />
-</p>
+<div align="center">
 
-<h1 align="center">Game Frame X Object Storage</h1>
+<img src="https://download.alianblank.com/gameframex/gameframex_logo_320.png" alt="Game Frame X Logo" width="160" />
 
-<p align="center">
-  <a href="https://github.com/GameFrameX/com.gameframex.unity.objectstorage/releases">
-    <img src="https://img.shields.io/github/v/release/GameFrameX/com.gameframex.unity.objectstorage" alt="Version" />
-  </a>
-  <a href="https://github.com/GameFrameX/com.gameframex.unity.objectstorage/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/GameFrameX/com.gameframex.unity.objectstorage" alt="License" />
-  </a>
-  <a href="https://gameframex.doc.alianblank.com">
-    <img src="https://img.shields.io/badge/Documentation-online-blue" alt="Documentation" />
-  </a>
-</p>
+# Game Frame X Object Storage
 
-<p align="center">
-  独立游戏前后端一体化解决方案 · 独立游戏开发者的圆梦大使
-</p>
+[![License](https://img.shields.io/github/license/GameFrameX/com.gameframex.unity.objectstorage)](https://github.com/GameFrameX/com.gameframex.unity.objectstorage/blob/main/LICENSE.md)
+[![Version](https://img.shields.io/github/v/release/GameFrameX/com.gameframex.unity.objectstorage)](https://github.com/GameFrameX/com.gameframex.unity.objectstorage/releases)
+[![Documentation](https://img.shields.io/badge/Documentation-docs-blue)](https://gameframex.doc.alianblank.com)
 
-<p align="center">
-  <a href="https://gameframex.doc.alianblank.com">文档</a> ·
-  <a href="#快速开始">快速开始</a> ·
-  <a href="https://qm.qq.com/cgi-bin/qm/qr?k=ikT9gA5m2sKwOyNOfYmQvSAPK_c3GmD6">QQ群</a> ·
-  语言: <a href="README.md">English</a> | <strong>简体中文</strong> | <a href="README.zh-TW.md">繁體中文</a> | <a href="README.ja.md">日本語</a> | <a href="README.ko.md">한국어</a>
-</p>
+独立游戏前后端一体化解决方案 · 独立游戏开发者的圆梦大使
 
----
+<br />
 
+[文档](https://gameframex.doc.alianblank.com) · [快速开始](#快速开始) · [QQ群](https://qm.qq.com/cgi-bin/qm/qr?k=ikT9gA5m2sKwOyNOfYmQvSAPK_c3GmD6)
+
+<br />
+
+[English](README.md) | **简体中文** | [繁體中文](README.zh-TW.md) | [日本語](README.ja.md) | [한국어](README.ko.md)
+
+</div>
 ## 项目简介
 
 **Object Storage 组件** - 提供对象存储（云文件存储）操作的基础接口和抽象。本包定义了上传文件和目录到对象存储服务的核心契约，服务商特定的实现以独立包的形式提供。
