@@ -36,30 +36,34 @@
 
 ### インストール
 
-以下のいずれかの方法を選択してください：
+Unity プロジェクトの `Packages/manifest.json` を編集し、`scopedRegistries` セクションを追加してください：
 
-1. プロジェクトの `manifest.json` の `dependencies` セクションに以下を追加：
-   ```json
-   {"com.gameframex.unity.objectstorage": "https://github.com/AlianBlank/com.gameframex.unity.objectstorage.git"}
-   ```
-2. Unity の `Package Manager` で `Git URL` を使用して追加：https://github.com/AlianBlank/com.gameframex.unity.objectstorage.git
-3. リポジトリをダウンロードして Unity プロジェクトの `Packages` ディレクトリに配置（自動的に読み込まれます）。
-
-### 使用例
-
-```csharp
-using GameFrameX.ObjectStorage.Runtime;
-
-// アップロードマネージャーインスタンスを作成して初期化
-IObjectStorageUploadManager uploadManager = ObjectStorageUploadFactory.Create<YourCustomUploadManager>(
-    "your_access_key", "your_secret_key", "your_bucket_name");
-
-// アップロード先のストレージパスを設定
-uploadManager.SetSavePath("desired/upload/path");
-
-// ローカルディレクトリをアップロード
-uploadManager.UploadDirectory("local/directory/to/upload");
+```json
+{
+  "scopedRegistries": [
+    {
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
+    }
+  ]
+}
 ```
+
+`scopes` は、どのパッケージをこのレジストリから解決するかを制御します。`com.gameframex` で始まるパッケージのみがこのレジストリから取得されます。
+
+Then add the package to `dependencies`:
+
+```json
+{
+  "dependencies": {
+    "com.gameframex.unity.objectstorage": "1.1.0"
+  }
+}
+```
+
 
 ## プラットフォーム対応
 

@@ -36,30 +36,34 @@ All-in-One Solution for Indie Game Development · Empowering Indie Developers' D
 
 ### Installation
 
-Choose one of the following methods:
+Edit your Unity project's `Packages/manifest.json` and add the `scopedRegistries` section:
 
-1. Add the following to the `dependencies` section of your project's `manifest.json`:
-   ```json
-   {"com.gameframex.unity.objectstorage": "https://github.com/AlianBlank/com.gameframex.unity.objectstorage.git"}
-   ```
-2. Use `Git URL` in Unity's Package Manager: https://github.com/AlianBlank/com.gameframex.unity.objectstorage.git
-3. Download the repository and place it in your Unity project's `Packages` directory.
-
-### Usage Examples
-
-```csharp
-using GameFrameX.ObjectStorage.Runtime;
-
-// Create and initialize an upload manager instance
-IObjectStorageUploadManager uploadManager = ObjectStorageUploadFactory.Create<YourCustomUploadManager>(
-    "your_access_key", "your_secret_key", "your_bucket_name");
-
-// Set the target storage path
-uploadManager.SetSavePath("desired/upload/path");
-
-// Upload a local directory
-uploadManager.UploadDirectory("local/directory/to/upload");
+```json
+{
+  "scopedRegistries": [
+    {
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
+    }
+  ]
+}
 ```
+
+`scopes` controls which packages are resolved through this registry. Only packages whose names start with `com.gameframex` will be fetched from it.
+
+Then add the package to `dependencies`:
+
+```json
+{
+  "dependencies": {
+    "com.gameframex.unity.objectstorage": "1.1.0"
+  }
+}
+```
+
 
 ## Platform Support
 

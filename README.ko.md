@@ -36,30 +36,34 @@
 
 ### 설치
 
-다음 방법 중 하나를 선택하세요:
+Unity 프로젝트의 `Packages/manifest.json`을 편집하여 `scopedRegistries` 섹션을 추가하세요:
 
-1. 프로젝트의 `manifest.json` 파일의 `dependencies` 섹션에 다음 내용을 추가:
-   ```json
-   {"com.gameframex.unity.objectstorage": "https://github.com/AlianBlank/com.gameframex.unity.objectstorage.git"}
-   ```
-2. Unity의 `Package Manager`에서 `Git URL`을 사용하여 추가: https://github.com/AlianBlank/com.gameframex.unity.objectstorage.git
-3. 리포지토리를 다운로드하여 Unity 프로젝트의 `Packages` 디렉토리에 배치 (자동으로 로드됩니다).
-
-### 사용 예시
-
-```csharp
-using GameFrameX.ObjectStorage.Runtime;
-
-// 업로드 매니저 인스턴스 생성 및 초기화
-IObjectStorageUploadManager uploadManager = ObjectStorageUploadFactory.Create<YourCustomUploadManager>(
-    "your_access_key", "your_secret_key", "your_bucket_name");
-
-// 업로드 대상 스토리지 경로 설정
-uploadManager.SetSavePath("desired/upload/path");
-
-// 로컬 디렉토리 업로드
-uploadManager.UploadDirectory("local/directory/to/upload");
+```json
+{
+  "scopedRegistries": [
+    {
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
+    }
+  ]
+}
 ```
+
+`scopes`는 이 레지스트리를 통해 어떤 패키지를 해석할지 제어합니다. `com.gameframex`로 시작하는 패키지만 이 레지스트리에서 가져옵니다.
+
+Then add the package to `dependencies`:
+
+```json
+{
+  "dependencies": {
+    "com.gameframex.unity.objectstorage": "1.1.0"
+  }
+}
+```
+
 
 ## 플랫폼 지원
 

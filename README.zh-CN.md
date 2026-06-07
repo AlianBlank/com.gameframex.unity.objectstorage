@@ -34,32 +34,36 @@
 
 ## 快速开始
 
-### 安装方式
+### 安装
 
-任选其一：
+编辑 Unity 项目的 `Packages/manifest.json`，添加 `scopedRegistries` 部分：
 
-1. 直接在 `manifest.json` 的文件中的 `dependencies` 节点下添加以下内容
-   ```json
-   {"com.gameframex.unity.objectstorage": "https://github.com/AlianBlank/com.gameframex.unity.objectstorage.git"}
-   ```
-2. 在 Unity 的 `Packages Manager` 中使用 `Git URL` 的方式添加库，地址为：https://github.com/AlianBlank/com.gameframex.unity.objectstorage.git
-3. 直接下载仓库放置到 Unity 项目的 `Packages` 目录下，会自动加载识别。
-
-### 使用示例
-
-```csharp
-using GameFrameX.ObjectStorage.Runtime;
-
-// 创建并初始化上传管理器实例
-IObjectStorageUploadManager uploadManager = ObjectStorageUploadFactory.Create<YourCustomUploadManager>(
-    "your_access_key", "your_secret_key", "your_bucket_name");
-
-// 设置上传文件的目标存储路径
-uploadManager.SetSavePath("desired/upload/path");
-
-// 上传本地目录
-uploadManager.UploadDirectory("local/directory/to/upload");
+```json
+{
+  "scopedRegistries": [
+    {
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
+    }
+  ]
+}
 ```
+
+`scopes` 控制哪些包通过此注册表解析。只有以 `com.gameframex` 开头的包才会从这个注册表获取。
+
+Then add the package to `dependencies`:
+
+```json
+{
+  "dependencies": {
+    "com.gameframex.unity.objectstorage": "1.1.0"
+  }
+}
+```
+
 
 ## 平台支持
 
