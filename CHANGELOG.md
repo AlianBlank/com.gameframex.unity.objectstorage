@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/gameframex/com.gameframex.unity.objectstorage/compare/1.1.0...1.1.1) (2026-06-08)
+
+
+### Bug Fixes
+
+* 补全包规范文件（LICENSE/CHANGELOG/URL 字段/unity 字段） ([bba0c18](https://github.com/gameframex/com.gameframex.unity.objectstorage/commit/bba0c18271437445ace996bbce628dfc9b49d316))
+
 # [1.1.0](https://github.com/gameframex/com.gameframex.unity.objectstorage/compare/1.0.4...1.1.0) (2025-12-23)
 
 
