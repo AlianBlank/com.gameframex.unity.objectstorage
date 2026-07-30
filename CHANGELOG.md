@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/gameframex/com.gameframex.unity.objectstorage/compare/1.1.1...1.2.0) (2026-07-30)
+
+
+### Features
+
+* 添加依赖项 com.gameframex.unity 版本 2.5.1 ([56925d2](https://github.com/gameframex/com.gameframex.unity.objectstorage/commit/56925d2374f5c22a3816219296d994a0f69876db))
+
 ## [1.1.1](https://github.com/gameframex/com.gameframex.unity.objectstorage/compare/1.1.0...1.1.1) (2026-06-08)
 
 
